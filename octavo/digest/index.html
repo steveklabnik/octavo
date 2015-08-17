@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `digest` mod in crate `octavo`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, digest">
+
+    <title>octavo::digest - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>octavo</a></p><script>window.sidebarCurrent = {name: 'digest', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>octavo</a>::<wbr><a class='mod' href=''>digest</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-1927' class='srclink' href='../../src/octavo/digest/mod.rs.html#1-95' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Implementation of popular (and less popular, but fancy) hashing algorithms.</p>
+
+<p><strong>WARNING</strong>: Not all of them are cryptographic hash functions and there are known attacks on
+some of them. Use with careful and <strong>always</strong> check that the one you choose fits your
+requirements!</p>
+
+<p><strong>WARNING</strong>: If you want to use one of this functions as password hash then you are evil human
+being and I really hope that I&#39;m not using any of your services.</p>
+
+<h2 id="general-use-hash-functions" class='section-header'><a
+                           href="#general-use-hash-functions">General use hash functions</a></h2>
+<p>These are hash functions that can be use to check message integrity against random
+unintentional changes, i.e. damaged source or cosmic rays. They are meant to be fast and simple.</p>
+
+<p><strong>DO NOT</strong> use this functions if you want to check against intentional changes that may
+be caused by 3rd-party! If that is your purpose then check cryptographic hash functions section
+below.</p>
+
+<ul>
+<li><code>Adler32</code></li>
+<li><code>CRC32</code></li>
+</ul>
+
+<h2 id="cryptographic-hash-functions" class='section-header'><a
+                           href="#cryptographic-hash-functions">Cryptographic hash functions</a></h2>
+<p>Via <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">Wikipedia</a>:</p>
+
+<blockquote>
+<p>The ideal cryptographic hash function has four main properties:</p>
+
+<ul>
+<li>it is easy to compute the hash value for any given message</li>
+<li>it is infeasible to generate a message from its hash</li>
+<li>it is infeasible to modify a message without changing the hash</li>
+<li>it is infeasible to find two different messages with the same hash.</li>
+</ul>
+</blockquote>
+
+<h3 id="considered-safe" class='section-header'><a
+                           href="#considered-safe">Considered safe</a></h3>
+<ul>
+<li><code>SHA1</code> - deprecated in favour of <code>SHA2</code> family</li>
+<li><code>SHA2</code> family</li>
+<li><code>SHA3</code> family</li>
+</ul>
+
+<h3 id="broken-or-easy-breakable-on-modern-hardware" class='section-header'><a
+                           href="#broken-or-easy-breakable-on-modern-hardware">Broken or easy breakable on modern hardware</a></h3>
+<ul>
+<li><code>MD4</code></li>
+<li><code>MD5</code></li>
+</ul>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='adler32/index.html'
+                               title='octavo::digest::adler32'>adler32</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='crc32/index.html'
+                               title='octavo::digest::crc32'>crc32</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='md4/index.html'
+                               title='octavo::digest::md4'>md4</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='md5/index.html'
+                               title='octavo::digest::md5'>md5</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='sha1/index.html'
+                               title='octavo::digest::sha1'>sha1</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='sha2/index.html'
+                               title='octavo::digest::sha2'>sha2</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='sha3/index.html'
+                               title='octavo::digest::sha3'>sha3</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.Digest.html'
+                               title='octavo::digest::Digest'>Digest</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div>
+            <div class="shortcuts">
+                <h1>Keyboard Shortcuts</h1>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h1>Search Tricks</h1>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>typedef</code> (or
+                    <code>tdef</code>).
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "octavo";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
